@@ -52,8 +52,6 @@ export function SearchContextProvider({children}: SearchContextProviderProps){
     const bearerKey = import.meta.env.VITE_APP_AUTHORIZATION_KEY_BEARER
     const secondKey = import.meta.env.VITE_APP_SECOND_KEY
 
-    console.log(bearerKey)
-    console.log(secondKey)
 
     const getUserById = async () => {
 
