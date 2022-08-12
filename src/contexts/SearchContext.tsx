@@ -49,7 +49,12 @@ export function SearchContextProvider({children}: SearchContextProviderProps){
     const [user, setUser] = useState<User | null>(null)
     const [clickInSearch, setClickInSearch] = useState(false)
 
-    console.log(user)
+    const bearerKey = import.meta.env.VITE_APP_AUTHORIZATION_KEY_BEARER
+    const secondKey = import.meta.env.VITE_APP_SECOND_KEY
+
+    console.log(bearerKey)
+    console.log(secondKey)
+
     const getUserById = async () => {
 
       if(textSearch == ""){
@@ -57,12 +62,13 @@ export function SearchContextProvider({children}: SearchContextProviderProps){
         return;
       }
 
+
       try{
         const { data } = await api.get(`/users/by-id/${textSearch}`, {
           headers: {
             Accept: "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_APP_AUTHORIZATION_KEY_BEARER}`,
-            b1012cc01979aeab712c99924ed4c3e3433d072: `${import.meta.env.VITE_APP_SECOND_KEY}`,
+            Authorization: `Bearer ${bearerKey}`,
+            b1012cc01979aeab712c99924ed4c3e3433d072: `${secondKey}`,
           },
         });
         setUser(data.result);

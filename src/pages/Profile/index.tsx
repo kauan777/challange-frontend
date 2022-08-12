@@ -1,4 +1,3 @@
-import { Backpack, KeyReturn } from "phosphor-react";
 import { useSearch } from "../../contexts/SearchContext";
 import {
   ContainerInfoProfile,
