@@ -15,7 +15,7 @@ export default defineConfig(({ command, mode }) => {
     // vite config
     plugins: [react()],
     define: {
-      __APP_ENV__: env.APP_ENV
+      'process.env': process.env,
     }
   }
 })
